@@ -165,39 +165,39 @@ html {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
-
-/* Buttons - Minimal, elegant */
 .btn {
-    border-radius: 6px;
-    padding: 0.6rem 1.8rem;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
+    border-radius: 50px;
+    padding: 0.6rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #e0b84f, #cfa63a);
-    color: #111;
+    background: linear-gradient(135deg, #ff9f9f, #e88a8a);
     border: none;
-    box-shadow: 0 6px 25px rgba(224, 184, 79, 0.3);
+    color: #0a0a0a;
 }
 
 .btn-primary:hover {
+    background: linear-gradient(135deg, #e88a8a, #d47c7c);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(224, 184, 79, 0.45);
+    box-shadow: 0 10px 20px rgba(255, 159, 159, 0.3);
 }
 
 .btn-outline-primary {
+    border: 2px solid #ff9f9f;
+    color: #ff9f9f;
     background: transparent;
-    color: var(--text-soft);
-    border: 1px solid var(--border-light);
 }
 
 .btn-outline-primary:hover {
-    background: var(--accent-rose);
-    color: var(--bg-deep);
-    border-color: var(--accent-rose);
+    background: #ff9f9f;
+    color: #0a0a0a;
+    transform: translateY(-2px);
 }
 
 .btn-light {
