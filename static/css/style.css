@@ -1,26 +1,18 @@
 /* Aesthetic Dark Theme - Moody, Warm, Professional */
 :root {
-    --bg-deep: #0e0e11;
-    --bg-card: #18181c;
-    --bg-soft: #222227;
-
+    --bg-deep: #0a0a0a;
+    --bg-card: #141414;
+    --bg-soft: #1a1a1a;
     --text-light: #ffffff;
-    --text-soft: #e4e4e7;
-    --text-muted: #a1a1aa;
-
-    /* Rich Royal Gold */
-    --accent-rose: #e0b84f;
-    --accent-dusty: #cfa63a;
-    --accent-warm: #f1d27a;
-
-    --border-soft: #2a2a30;
-    --border-light: #3a3a42;
-
-    --success-muted: #6fcf97;
-    --warning-muted: #f2c94c;
-    --danger-muted: #eb5757;
+    --text-soft: #f0f0f0;
+    --text-muted: #a8a8a8;
+    --accent-rose: #ff9f9f;
+    --accent-dusty: #e88a8a;
+    --accent-warm: #d47c7c;
+    --border-soft: #2d2d2d;
+    --border-light: #404040;
 }
-
+   
 * {
     margin: 0;
     padding: 0;
