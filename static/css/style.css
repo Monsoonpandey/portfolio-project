@@ -454,3 +454,38 @@ hr {
     border-color: var(--border-soft);
     margin: 2rem 0;
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card,
+.hero-section,
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.navbar-brand i {
+    animation: pulse 2s infinite;
+}
