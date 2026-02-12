@@ -178,31 +178,30 @@ def contact():
 @app.cli.command("init-db")
 def init_db():
     db.create_all()
-    
-    # Add projects with 100% WORKING image URLs
+        # Add projects with REAL, RELATABLE images
     if Project.query.count() == 0:
         projects = [
             Project(
                 title="Rent Anime Boyfriend",
-                description="An innovative e-commerce platform where users can 'rent' anime boyfriend characters. Built with React.",
-                technologies="React, HTML5, CSS3, JavaScript",
-                image_url="https://picsum.photos/600/400?random=1",
+                description="An innovative e-commerce platform where users can 'rent' anime boyfriend characters. Features include character profiles, booking system, payment integration, and user reviews. Built with React for dynamic UI.",
+                technologies="React, HTML5, CSS3, JavaScript, Node.js",
+                image_url="https://images.pexels.com/photos/8474824/pexels-photo-8474824.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
                 github_url="https://github.com/Monsoonpandey/rent-anime-boyfriend",
                 live_url="#"
             ),
             Project(
                 title="Movie Booking System",
-                description="A full-stack movie ticket booking platform with Firebase integration.",
-                technologies="React, Firebase, JavaScript",
-                image_url="https://picsum.photos/600/400?random=2",
+                description="A full-stack movie ticket booking platform with Firebase integration. Users can browse movies, select seats, make bookings, and receive confirmations. Deployed on Vercel.",
+                technologies="React, Firebase, HTML5, CSS3, JavaScript, Vercel",
+                image_url="https://images.pexels.com/photos/7991379/pexels-photo-7991379.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
                 github_url="https://github.com/Monsoonpandey/movie-booking-system",
                 live_url="#"
             ),
             Project(
                 title="Modern Portfolio Website",
-                description="A sleek, responsive portfolio website built with Tailwind CSS.",
-                technologies="HTML5, CSS3, Tailwind CSS",
-                image_url="https://picsum.photos/600/400?random=3",
+                description="A sleek, responsive portfolio website built with HTML5, CSS3, and Tailwind CSS. Features smooth animations, dark mode, project gallery, and contact form.",
+                technologies="HTML5, CSS3, Tailwind CSS, JavaScript",
+                image_url="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
                 github_url="https://github.com/Monsoonpandey/tailwind-portfolio",
                 live_url="#"
             )
@@ -211,7 +210,10 @@ def init_db():
         for project in projects:
             db.session.add(project)
         db.session.commit()
-        print("✅ Projects added!")
+        print("✅ Projects added with REAL images!")
+    
+        
+        
     
     # Add admin user
     if User.query.count() == 0:
