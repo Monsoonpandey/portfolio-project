@@ -170,38 +170,39 @@ def logout():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
-        flash('Thank you for your message! We\'ll get back to you soon.', 'success')
+        flash('Thank you for your message! I\'ll get back to you soon.', 'success')
         return redirect(url_for('contact'))
     return render_template('contact.html')
 
-# Create database and sample data
+# Create database and sample data - SIMPLE & WORKING
 @app.cli.command("init-db")
 def init_db():
     db.create_all()
     
+    # Add projects with 100% WORKING image URLs
     if Project.query.count() == 0:
         projects = [
             Project(
                 title="Rent Anime Boyfriend",
-                description="An innovative e-commerce platform where users can 'rent' anime boyfriend characters. Features include character profiles, booking system, payment integration, and user reviews. Built with React for dynamic UI and smooth user experience.",
-                technologies="React, HTML5, CSS3, JavaScript, Node.js",
-                image_url="https://placehold.co/600x400/1a1a1a/e6b8b8?text=Rent+Anime+Boyfriend",
+                description="An innovative e-commerce platform where users can 'rent' anime boyfriend characters. Built with React.",
+                technologies="React, HTML5, CSS3, JavaScript",
+                image_url="https://picsum.photos/600/400?random=1",
                 github_url="https://github.com/Monsoonpandey/rent-anime-boyfriend",
                 live_url="#"
             ),
             Project(
                 title="Movie Booking System",
-                description="A full-stack movie ticket booking platform with Firebase integration. Users can browse movies, select seats, make bookings, and receive confirmations. Deployed on Vercel for high availability.",
-                technologies="React, Firebase, HTML5, CSS3, JavaScript, Vercel",
-                image_url="https://placehold.co/600x400/1a1a1a/e6b8b8?text=Movie+Booking+System",
+                description="A full-stack movie ticket booking platform with Firebase integration.",
+                technologies="React, Firebase, JavaScript",
+                image_url="https://picsum.photos/600/400?random=2",
                 github_url="https://github.com/Monsoonpandey/movie-booking-system",
                 live_url="#"
             ),
             Project(
                 title="Modern Portfolio Website",
-                description="A sleek, responsive portfolio website built with HTML5, CSS3, and Tailwind CSS. Features include smooth animations, dark mode, project gallery, and contact form. Demonstrates modern frontend development practices.",
-                technologies="HTML5, CSS3, Tailwind CSS, JavaScript",
-                image_url="https://placehold.co/600x400/1a1a1a/e6b8b8?text=Portfolio+Website",
+                description="A sleek, responsive portfolio website built with Tailwind CSS.",
+                technologies="HTML5, CSS3, Tailwind CSS",
+                image_url="https://picsum.photos/600/400?random=3",
                 github_url="https://github.com/Monsoonpandey/tailwind-portfolio",
                 live_url="#"
             )
@@ -210,22 +211,17 @@ def init_db():
         for project in projects:
             db.session.add(project)
         db.session.commit()
-        print("✅ Projects created successfully!")
-        print("   • Rent Anime Boyfriend")
-        print("   • Movie Booking System")
-        print("   • Modern Portfolio Website")
+        print("✅ Projects added!")
     
+    # Add admin user
     if User.query.count() == 0:
         admin = User(username="admin", email="admin@example.com")
         admin.set_password("admin123")
         db.session.add(admin)
         db.session.commit()
-        print("✅ Admin user created!")
-        print("   • Username: admin")
-        print("   • Password: admin123")
+        print("✅ Admin user created! Username: admin, Password: admin123")
     
-    print("✅ Database initialized successfully!")
-    print("🚀 You can now run 'python app.py'")
+    print("✅ Database ready!")
 
 if __name__ == '__main__':
     with app.app_context():

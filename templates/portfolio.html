@@ -1,49 +1,32 @@
 {% extends "base.html" %}
 
-{% block title %}Portfolio - My Portfolio{% endblock %}
+{% block title %}Portfolio - Monsoon Pandey{% endblock %}
 
 {% block content %}
 <div class="container py-5">
     <div class="row mb-5">
         <div class="col-12 text-center">
             <h1 class="display-4">My Portfolio</h1>
-            <p class="lead">Here are some of my recent projects</p>
+            <p class="lead text-muted">Here are my recent projects</p>
         </div>
     </div>
 
     <div class="row">
-        {% if projects %}
         {% for project in projects %}
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="{{ project.image_url }}" class="card-img-top" alt="{{ project.title }}">
+            <div class="card h-100">
+                <img src="{{ project.image_url }}" class="card-img-top" alt="{{ project.title }}"
+                    style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">{{ project.title }}</h5>
                     <p class="card-text">{{ project.description }}</p>
-                    <p class="text-muted">
-                        <small>
-                            <i class="fas fa-code me-2"></i>{{ project.technologies }}
-                        </small>
-                    </p>
-                </div>
-                <div class="card-footer bg-white border-0 pb-3">
-                    <a href="{{ project.github_url }}" class="btn btn-dark btn-sm me-2" target="_blank">
-                        <i class="fab fa-github me-1"></i>GitHub
-                    </a>
-                    <a href="{{ project.live_url }}" class="btn btn-primary btn-sm" target="_blank">
-                        <i class="fas fa-external-link-alt me-1"></i>Live Demo
-                    </a>
+                    <p class="text-muted small">{{ project.technologies }}</p>
+                    <a href="{{ project.github_url }}" class="btn btn-dark btn-sm" target="_blank">GitHub</a>
+                    <a href="{{ project.live_url }}" class="btn btn-primary btn-sm" target="_blank">Live Demo</a>
                 </div>
             </div>
         </div>
         {% endfor %}
-        {% else %}
-        <div class="col-12 text-center py-5">
-            <i class="fas fa-code-branch fa-5x text-muted mb-3"></i>
-            <h3>No Projects Yet</h3>
-            <p class="text-muted">Check back soon for updates!</p>
-        </div>
-        {% endif %}
     </div>
 </div>
 {% endblock %}
