@@ -489,3 +489,24 @@ section {
 .navbar-brand i {
     animation: pulse 2s infinite;
 }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff9f9f, #e88a8a);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #e88a8a, #d47c7c);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--bg-deep);
+}
