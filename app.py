@@ -185,40 +185,47 @@ def init_db():
                 title="Rent Anime Boyfriend",
                 description="An innovative e-commerce platform where users can 'rent' anime boyfriend characters. Features include character profiles, booking system, payment integration, and user reviews. Built with React for dynamic UI and smooth user experience.",
                 technologies="React, HTML5, CSS3, JavaScript, Node.js",
-                image_url="https://via.placeholder.com/600x400/2563eb/ffffff?text=Rent+Anime+Boyfriend",
+                image_url="https://placehold.co/600x400/1a1a1a/e6b8b8?text=Rent+Anime+Boyfriend",
                 github_url="https://github.com/Monsoonpandey/rent-anime-boyfriend",
-                live_url="https://rent-anime-boyfriend.vercel.app"
+                live_url="#"
             ),
             Project(
                 title="Movie Booking System",
                 description="A full-stack movie ticket booking platform with Firebase integration. Users can browse movies, select seats, make bookings, and receive confirmations. Deployed on Vercel for high availability.",
                 technologies="React, Firebase, HTML5, CSS3, JavaScript, Vercel",
-                image_url="https://via.placeholder.com/600x400/0ea5e9/ffffff?text=Movie+Booking+System",
+                image_url="https://placehold.co/600x400/1a1a1a/e6b8b8?text=Movie+Booking+System",
                 github_url="https://github.com/Monsoonpandey/movie-booking-system",
-                live_url="https://movie-booking-system.vercel.app"
+                live_url="#"
             ),
             Project(
                 title="Modern Portfolio Website",
                 description="A sleek, responsive portfolio website built with HTML5, CSS3, and Tailwind CSS. Features include smooth animations, dark mode, project gallery, and contact form. Demonstrates modern frontend development practices.",
                 technologies="HTML5, CSS3, Tailwind CSS, JavaScript",
-                image_url="https://via.placeholder.com/600x400/38bdf8/ffffff?text=Portfolio+Website",
+                image_url="https://placehold.co/600x400/1a1a1a/e6b8b8?text=Portfolio+Website",
                 github_url="https://github.com/Monsoonpandey/tailwind-portfolio",
-                live_url="https://monsoonpandey.vercel.app"
+                live_url="#"
             )
         ]
+        
         for project in projects:
             db.session.add(project)
         db.session.commit()
-        print("Sample projects created with Monsoonpandey's projects!")
+        print("✅ Projects created successfully!")
+        print("   • Rent Anime Boyfriend")
+        print("   • Movie Booking System")
+        print("   • Modern Portfolio Website")
     
     if User.query.count() == 0:
         admin = User(username="admin", email="admin@example.com")
         admin.set_password("admin123")
         db.session.add(admin)
         db.session.commit()
-        print("Admin user created! Username: admin, Password: admin123")
+        print("✅ Admin user created!")
+        print("   • Username: admin")
+        print("   • Password: admin123")
     
-    print("Database initialized successfully!")
+    print("✅ Database initialized successfully!")
+    print("🚀 You can now run 'python app.py'")
 
 if __name__ == '__main__':
     with app.app_context():
