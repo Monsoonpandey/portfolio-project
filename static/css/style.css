@@ -12,7 +12,7 @@
     --border-soft: #2d2d2d;
     --border-light: #404040;
 }
-   
+
 * {
     margin: 0;
     padding: 0;
@@ -43,6 +43,7 @@ h6 {
 p {
     color: var(--text-muted);
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -95,23 +96,43 @@ html {
     color: var(--text-light) !important;
 }
 
-/* Hero Section - Moody, subtle */
 .hero-section {
-    background: var(--bg-deep);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0f0f 50%, #0a0a0a 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     position: relative;
-    padding: 120px 0 !important;
-    margin-bottom: 60px;
-    border-bottom: 1px solid var(--border-soft);
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .hero-section h1 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-    letter-spacing: -1px;
-    line-height: 1.2;
+    animation: fadeInUp 0.8s ease, glow 2s ease-in-out infinite alternate;
 }
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 159, 159, 0.2);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(255, 159, 159, 0.4);
+    }
+}
+
+
 
 .hero-section .lead {
     color: var(--text-muted);
