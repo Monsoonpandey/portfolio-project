@@ -305,34 +305,41 @@ html {
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
-
-/* Footer - Minimal */
 footer {
-    background: var(--bg-deep);
-    border-top: 1px solid var(--border-soft);
-    margin-top: 80px !important;
-    padding: 60px 0 30px !important;
+    background: linear-gradient(to bottom, #0a0a0a, #050505);
+    border-top: 1px solid rgba(255, 159, 159, 0.2);
+    padding: 60px 0 30px;
+    margin-top: 80px;
+    position: relative;
 }
 
-footer h5 {
-    color: var(--text-light);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-footer p {
-    color: var(--text-muted);
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ff9f9f, #e88a8a, #ff9f9f, transparent);
 }
 
 footer a {
-    color: var(--text-muted);
-    transition: color 0.2s ease;
+    color: #a8a8a8;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 footer a:hover {
-    color: var(--accent-rose);
-    text-decoration: none;
+    color: #ff9f9f;
+    transform: translateY(-3px);
 }
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
 
 /* Badges - Subtle */
 .badge {
