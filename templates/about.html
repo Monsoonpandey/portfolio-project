@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}About - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="text-center mb-5">
+                <h1 class="display-4">About Me</h1>
+                <hr class="w-25 mx-auto">
+            </div>
+
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-user-circle fa-6x text-primary"></i>
+                    </div>
+
+                    <h3 class="text-center mb-4">Hi, I'm Mansoon Pandey</h3>
+
+                    <p class="lead">I'm a passionate web developer and IT student at Texas College of Management & IT.
+                    </p>
+
+                    <p>Currently pursuing my Bachelor of Information Technology (BIT), I have developed strong skills in
+                        both frontend and backend web development. My journey in web development started with HTML and
+                        CSS, and now I work with modern technologies like Flask, React, and various databases.</p>
+
+                    <h4 class="mt-4 mb-3">What I Do</h4>
+                    <ul>
+                        <li>Build responsive, user-friendly websites</li>
+                        <li>Develop full-stack web applications</li>
+                        <li>Create interactive user interfaces</li>
+                        <li>Design and implement databases</li>
+                        <li>Write clean, maintainable code</li>
+                    </ul>
+
+                    <h4 class="mt-4 mb-3">Technologies I Work With</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li>HTML5 & CSS3</li>
+                                <li>JavaScript </li>
+                                
+                                <li>React.js</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                
+                               
+                                <li>Git & GitHub</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <a href="{{ url_for('portfolio') }}" class="btn btn-primary me-2">
+                            <i class="fas fa-eye me-2"></i>View My Work
+                        </a>
+                        <a href="{{ url_for('contact') }}" class="btn btn-outline-primary">
+                            <i class="fas fa-envelope me-2"></i>Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

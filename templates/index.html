@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4">Hi, I'm Mansoon Pandey</h1>
+                <p class="lead">Web Developer & IT Student</p>
+                <p class="mb-4">I create responsive, user-friendly websites and applications using modern technologies.
+                </p>
+                <a href="{{ url_for('portfolio') }}" class="btn btn-light btn-lg">
+                    <i class="fas fa-eye"></i> View My Work
+                </a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg ms-2">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fas fa-laptop-code fa-6x"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">My Skills</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center p-4">
+                    <i class="fas fa-code fa-4x text-primary mb-3"></i>
+                    <h5 class="card-title">Frontend</h5>
+                    <p class="card-text">HTML5, CSS3, JavaScript, Bootstrap, React</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center p-4">
+                    <i class="fas fa-server fa-4x text-primary mb-3"></i>
+                    <h5 class="card-title">Backend</h5>
+                    <p class="card-text">Python, Flask, SQLAlchemy, REST APIs</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center p-4">
+                    <i class="fas fa-database fa-4x text-primary mb-3"></i>
+                    <h5 class="card-title">Database</h5>
+                    <p class="card-text">SQLite, PostgreSQL, Firebase</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Featured Projects</h2>
+        <div class="row">
+            {% if projects %}
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="{{ project.image_url }}" class="card-img-top" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description[:100] }}...</p>
+                        <p class="text-muted">
+                            <small>{{ project.technologies }}</small>
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">View Project</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-12 text-center">
+                <p>No projects to display yet.</p>
+            </div>
+            {% endif %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('portfolio') }}" class="btn btn-outline-primary">View All Projects</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
