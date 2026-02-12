@@ -31,3 +31,8 @@ $(document).ready(function () {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     });
 });
+$('#themeToggle').click(function () {
+    $('body').toggleClass('light-mode');
+    $('.navbar').toggleClass('navbar-dark navbar-light');
+    $(this).find('i').toggleClass('fa-moon fa-sun');
+});
